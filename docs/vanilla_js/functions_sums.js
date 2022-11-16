@@ -12,3 +12,14 @@
     함수 function
 */
 //프로그래밍
+let numbers = [1, 2, 3, 4, 5, 6];
+
+function sum(numbers) {
+  let sum_num = 0;
+  for (let i of numbers) {
+    sum_num += i;
+  }
+  return sum_num;
+}
+let sum_num = sum(numbers);
+console.log(sum_num);
