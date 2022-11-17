@@ -31,3 +31,25 @@ const cars = ["BMW", "Volvo", "Mini"];
 for (let car of cars) {
   console.log(`${car}`);
 }
+(cars) => {
+  console.log(`${car}`);
+};
+cars.forEach((car) => {
+  console.log(`${car}`);
+});
+// forEach : arrow function을 그대로 가져온 것이라고 생각하면 편함
+const array1 = ["a", "b", "c"];
+
+array1.forEach((element) => console.log(element));
+
+// Arrow Function
+let arrowFunction = (element) /*parameter*/ => {
+  console.log(element);
+}; // 괄호, 중괄호 생략가능
+array1.forEach(arrowFunction);
+
+// Normal Function
+function normalFunction(element) {
+  console.log(element);
+  array1.forEach(normalFunction);
+}
