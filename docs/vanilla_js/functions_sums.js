@@ -13,13 +13,12 @@
 */
 //프로그래밍
 function sum(numbers) {
-  let sum_num = 0;
+  let sum = 0;
   for (let i of numbers) {
-    sum_num += i;
+    sum += i;
   }
-  return sum_num;
+  return sum;
 }
 
-let numbers = [1, 2, 3, 4, 5, 6];
-let sum_num = sum(numbers);
-console.log(sum_num);
+let array_num = [1, 2, 3, 4, 5, 6];
+console.log(sum(array_num));
