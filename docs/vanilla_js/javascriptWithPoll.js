@@ -6,7 +6,7 @@ let input = fs.readFileSync(filepath).toString().trim().split("\n").map(Number);
 
 let input_answers = [];
 for (let i = 0; i < 5; i++) {
-  input_nswers[i] = input[i];
+  input_answers[i] = input[i];
 }
 
 const questions_list = [
@@ -46,21 +46,53 @@ const example_list = [
 ];
 
 const answers = [
-  { example_uid: "Q1", example_uid: "E1" },
-  { example_uid: "Q1", example_uid: "E2" },
-  { example_uid: "Q1", example_uid: "E3" },
-  { example_uid: "Q2", example_uid: "E1" },
-  { example_uid: "Q2", example_uid: "E2" },
-  { example_uid: "Q2", example_uid: "E3" },
-  { example_uid: "Q2", example_uid: "E4" },
-  { example_uid: "Q3", example_uid: "E1" },
-  { example_uid: "Q3", example_uid: "E2" },
-  { example_uid: "Q4", example_uid: "E1" },
-  { example_uid: "Q4", example_uid: "E2" },
-  { example_uid: "Q4", example_uid: "E3" },
-  { example_uid: "Q4", example_uid: "E4" },
-  { example_uid: "Q4", example_uid: "E5" },
-  { example_uid: "Q5", example_uid: "E1" },
-  { example_uid: "Q5", example_uid: "E2" },
-  { example_uid: "Q5", example_uid: "E3" },
+  { questions_uid: "Q1", example_uid: "E1" },
+  { questions_uid: "Q1", example_uid: "E2" },
+  { questions_uid: "Q1", example_uid: "E3" },
+  { questions_uid: "Q2", example_uid: "E1" },
+  { questions_uid: "Q2", example_uid: "E2" },
+  { questions_uid: "Q2", example_uid: "E3" },
+  { questions_uid: "Q2", example_uid: "E4" },
+  { questions_uid: "Q3", example_uid: "E1" },
+  { questions_uid: "Q3", example_uid: "E2" },
+  { questions_uid: "Q4", example_uid: "E1" },
+  { questions_uid: "Q4", example_uid: "E2" },
+  { questions_uid: "Q4", example_uid: "E3" },
+  { questions_uid: "Q4", example_uid: "E4" },
+  { questions_uid: "Q4", example_uid: "E5" },
+  { questions_uid: "Q5", example_uid: "E1" },
+  { questions_uid: "Q5", example_uid: "E2" },
+  { questions_uid: "Q5", example_uid: "E3" },
 ];
+
+for (let i = 0; i < answers.length; i++) {
+  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
+  for (let j = 0; j < answers.length; j++) {
+    if (answers[j].questions_uid == questions_list[i].questions_uid) {
+      console.log(`(${example_list[j].order})${example_list[j].example}`);
+    } else break;
+  }
+  console.log(`답) ${input_answers[i]}`);
+}
+
+/*
+for (let i = 0; i < questions_list.length; i++) {
+  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
+  for (let j = 0; j < example_list.length; j++) {
+    console.log(`(${example_list[j].order})${example_list[j].example}`);
+  }
+  console.log(`답) ${input_answers[i]}`);
+}
+*/
+
+/*
+for (let i = 0; i < answers.length; i++) {
+  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
+  for (let j = 0; ; j++) {
+    if (answers[j].questions_uid == questions_list[i].questions_uid) {
+      console.log(`(${example_list[j].order})${example_list[j].example}`);
+    } else break;
+  }
+  console.log(`답) ${input_answers[i]}`);
+}
+*/
