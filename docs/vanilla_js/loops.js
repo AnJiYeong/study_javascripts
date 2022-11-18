@@ -40,11 +40,11 @@ cars.forEach((car) => {
 // forEach : arrow function을 그대로 가져온 것이라고 생각하면 편함
 const array1 = ["a", "b", "c"];
 
-array1.forEach((element) => console.log(element));
+array1.forEach((element, i) => console.log(element));
 
 // Arrow Function
-let arrowFunction = (element) /*parameter*/ => {
-  console.log(element);
+let arrowFunction = (element, index) /*parameter*/ => {
+  console.log(`${element}, index ${index}`);
 }; // 괄호, 중괄호 생략가능
 array1.forEach(arrowFunction);
 

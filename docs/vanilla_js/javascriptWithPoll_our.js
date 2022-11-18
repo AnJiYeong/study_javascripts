@@ -1,14 +1,3 @@
-let fs = require("fs");
-
-const filepath =
-  process.platform === "linux" ? "/dev/stdin" : "docs/vanilla_js/input.txt";
-let input = fs.readFileSync(filepath).toString().trim().split("\n").map(Number);
-
-let input_answers = [];
-for (let i = 0; i < 5; i++) {
-  input_answers[i] = input[i];
-}
-
 const questions_list = [
   {
     question: "해당 매장을 방문시 매장은 청결 하였습니까?",
@@ -56,31 +45,25 @@ const answers = [
   { questions_uid: "Q3", example_uid: "E1" },
   { questions_uid: "Q3", example_uid: "E2" },
   { questions_uid: "Q4", example_uid: "E1" },
-  { questions_uid: "Q4", example_uid: "E2" },
+  //{ questions_uid: "Q4", example_uid: "E2" },
   { questions_uid: "Q4", example_uid: "E3" },
   { questions_uid: "Q4", example_uid: "E4" },
   { questions_uid: "Q4", example_uid: "E5" },
-  { questions_uid: "Q5", example_uid: "E1" },
+  //{ questions_uid: "Q5", example_uid: "E1" },
   { questions_uid: "Q5", example_uid: "E2" },
   { questions_uid: "Q5", example_uid: "E3" },
 ];
 
-for (let i = 0; i < answers.length; i++) {
-  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
-  for (let j = 0; j < answers.length; j++) {
-    if (answers[j].questions_uid == questions_list[i].questions_uid) {
-      console.log(`(${example_list[j].order})${example_list[j].example}`);
-    } else break;
+let idx;
+let compare; // 비교할 변수
+for (idx = 0; idx < answers.length; idx++) {
+  //let answer_string =
+  if (compare != answers[idx]["questions_uid"]) {
+    console.log(`!= : ${answers[idx]["questions_uid"]}`);
+    console.log(`!= : ${answers[idx]["example_uid"]}`);
+  } else {
+    console.log(`== : ${answers[idx]["example_uid"]}`);
   }
-  console.log(`답) ${input_answers[i]}`);
+  compare = answers[idx]["questions_uid"];
 }
-
-/*
-for (let i = 0; i < questions_list.length; i++) {
-  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
-  for (let j = 0; j < example_list.length; j++) {
-    console.log(`(${example_list[j].order})${example_list[j].example}`);
-  }
-  console.log(`답) ${input_answers[i]}`);
-}
-*/
+console.log(`answers.longth : ${answers.length}, idx : ${idx}`);
