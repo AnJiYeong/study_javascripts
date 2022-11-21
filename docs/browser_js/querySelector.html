@@ -35,10 +35,10 @@
 
       // .list > item 각각 출력
       let queryLists = document.querySelectorAll(".list");
-      queryLists.forEach((list) => {
+      queryLists.forEach((list, index) => {
         console.log(list);
         let queryItems = queryLists.querySelectorAll(".item");
-        queryItems.forEach((item) => {
+        queryItems.forEach((item, index) => {
           console.log(item);
         });
       });
