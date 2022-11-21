@@ -35,9 +35,9 @@
 
       // .list .item 각각 출력
       let queryLists = document.querySelectorAll(".list");
-      let queryItems = queryLists.querySelectorAll(".item");
       queryLists.forEach((list) => {
         console.log(list);
+        let queryItems = queryLists.querySelectorAll(".item");
         queryItems.forEach((item) => {
           console.log(item);
         });
