@@ -27,16 +27,19 @@
     <a id="google" href="https://www.google.com">Google</a>
 
     <script>
+      // body태그 내 모든 형제 출력
       let queryBody = document.querySelectorAll("body");
       queryBody.forEach((body, index) => {
         console.log(body);
       });
 
+      // .list 출력
       let queryLists = document.querySelectorAll(".list");
       queryLists.forEach((list, index) => {
         console.log(list);
       });
 
+      // .item 출력
       let queryItems = document.querySelectorAll(".item");
       queryItems.forEach((item, index) => {
         console.log(item);
