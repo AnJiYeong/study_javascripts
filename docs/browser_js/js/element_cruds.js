@@ -25,6 +25,23 @@ const productsData = [
 ];
 let queryList = document.querySelector("#list");
 
-productsData.forEach((element, (index) => {}));
-snack = `<div>${productsData["title"]} : ${productsData["weight"]}</div>`;
-queryList.innerHTML = snack;
+productsData.forEach((product, index) => {
+  snack = `<div id='list'>${product["title"]} : ${product["weight"]}</div>`;
+  //console.log(`${product["title"]} : ${product["weight"]}`);
+  queryList.innerHTML = snack;
+});
+
+/*
+  snack[index] = "<div id='list'>" + productsData[index] + "</div>";
+  // snack = `<div>${productsData["title"]} : ${productsData["weight"]}</div>`;
+  queryList.innerHTML = snack[index];
+});
+*/
+
+// snack = `<div>${productsData["title"]} : ${productsData["weight"]}</div>`;
+//queryList.innerHTML = snack;
+
+// for (let product of producsData) {
+//   snack = `<div>${product["title"]} : ${product["weight"]}</div>`;
+//   queryList.innerHTML = snack;
+// }
