@@ -26,13 +26,13 @@ const questions_list = [
     order: 3,
   },
   {
-    question: "해당 매장을 다음에도 재방문 하실 의향이 있으십니까?",
-    questions_uid: "Q5",
+    question: "직원이 제조한 음료에 대해 맛은 좋았습니까?",
+    questions_uid: "Q4",
     order: 4,
   },
   {
-    question: "직원이 제조한 음료에 대해 맛은 좋았습니까?",
-    questions_uid: "Q4",
+    question: "해당 매장을 다음에도 재방문 하실 의향이 있으십니까?",
+    questions_uid: "Q5",
     order: 5,
   },
 ];
@@ -65,22 +65,38 @@ const answers = [
   { questions_uid: "Q5", example_uid: "E3" },
 ];
 
-for (let i = 0; i < answers.length; i++) {
-  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
-  for (let j = 0; j < answers.length; j++) {
-    if (answers[j].questions_uid == questions_list[i].questions_uid) {
-      console.log(`(${example_list[j].order})${example_list[j].example}`);
-    } else break;
+let idx;
+let compare; // 비교할 변수
+for (idx = 0; idx < answers.length; idx++) {
+  //let answer_string =
+  if (compare != answers[idx]["questions_uid"]) {
+    console.log(`${questionByUid(answers[idx]["questions_uid"])}`);
+    console.log(`${exampleByUid(answers[idx]["example_uid"])}`);
+  } else {
+    console.log(`${exampleByUid(answers[idx]["example_uid"])}`);
   }
-  console.log(`답) ${input_answers[i]}`);
+  compare = answers[idx]["questions_uid"];
+}
+console.log(`answers.longth : ${answers.length}, idx : ${idx}`);
+
+function questionByUid(answers_questions_uid) {
+  let question;
+  for (let idx = 0; ; idx++) {
+    if (answers_questions_uid == questions_list[idx]["questions_uid"]) {
+      question = `${questions_list[idx]["order"]}. ${questions_list[idx]["question"]}`;
+      break;
+    }
+  }
+  return question;
 }
 
-/*
-for (let i = 0; i < questions_list.length; i++) {
-  console.log(`${questions_list[i].order}. ${questions_list[i].question}`);
-  for (let j = 0; j < example_list.length; j++) {
-    console.log(`(${example_list[j].order})${example_list[j].example}`);
+function exampleByUid(answers_example_uid) {
+  let example;
+  for (let idx = 0; ; idx++) {
+    if (answers_example_uid == example_list[idx]["example_uid"]) {
+      example = `(${example_list[idx]["order"]})${example_list[idx]["example"]}`;
+      break;
+    }
   }
-  console.log(`답) ${input_answers[i]}`);
+  return example;
 }
-*/

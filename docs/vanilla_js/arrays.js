@@ -22,6 +22,11 @@ let first = ["apple", "banana"];
 let second = ["orange", "mellon"];
 let third = ["berry", "strawberry"];
 
+let fruitsArray = [];
+fruitsArray.push(first);
+fruitsArray.push(second);
+fruitsArray.push(third);
+
 let mixins_list = [first, second, third];
 
 console.log();
