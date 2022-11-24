@@ -38,7 +38,16 @@ const filepath =
   process.platform === "linux" ? "/dev/stdin" : "docs/vanilla_js/input.txt";
 let input = fs.readFileSync(filepath).toString().trim().split("\n");
 
-let inputNum = input[0].split(" ").map(Number);
-let num = input[1];
+// 처리
+let N = input[0].split(" ").map(Number);
+let num = input[1].split(" ").map(Number);
+let v = input[2].split(" ").map(Number);
 
-console.log();
+let count = 0;
+
+for (item of num) {
+  if (item == v) count++;
+}
+
+// 출력
+console.log(count);
