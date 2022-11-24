@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 개요</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>jQuery 개요</h1>
+
+    <h3>jQuery 맛보기</h3>
+
+    <p id="p1">
+      내가 그린 기린 그림은 목이 긴 기린 그림이고, <br />
+      네가 그린 기린 그림은 목이 짧은 기린 그림이다.
+    </p>
+
+    <button onclick="test1();">실행 확인</button>
+
+    <ul id="menu">
+      <li>불고기버거</li>
+      <li>치즈버거</li>
+      <li>치킨버거</li>
+    </ul>
+
+    <button id="btn">클릭 전</button>
+
+    <script>
+      function test1() {
+        //document.getElementById("p1").style.color = "tomato";
+        $("#p1").css("color", "tomato");
+      }
+
+      $("#menu").click(function () {
+        $("#menu").css("background", "gray");
+      });
+
+      var button = document.getElementById("btn");
+      button.addEventListener("click", function () {
+        button.innerHTML = "클릭 후";
+        button.style.color = "red";
+      });
+    </script>
+
+    <br /><br /><br /><br />
+    <a href="00_index.html">처음으로 돌아가기</a>
+  </body>
+</html>
