@@ -119,14 +119,78 @@ function getQuestionByUid(question_uid) {
   return question_desc; // question
 }
 
+// 설문 문항 function - 강사님 풀이
+function getQuestionByUid_us(question_uid) {
+  // questions_uid = "Q1" 이라고 생각하자
+  let question_desc = "";
+  for (question of questions_list) {
+    if (question["questions_uid"] === question_uid) {
+      question_desc = question["question"];
+      break;
+    }
+  }
+  return question_desc;
+}
+
+// 답항 function - 강사님
+function getAnswerByUid(answer_uid) {
+  let answer_desc = "";
+  for (answer of answer_list) {
+    if (answer["answer_uid"] === answer_uid) {
+      answer_desc = answer["answer"];
+      break;
+    }
+  }
+  return answer_desc;
+}
+
 for (poll of polls) {
-  console.log(`${getQuestionByUid(poll["questions_uid"])}`);
-  //console.log(`${poll["questions_uid"]}`); // == polls[idx]
+  // console.log(`${poll["questions_uid"]}`); // == polls[idx]
+  // console.log(`${getQuestionByUid(poll["questions_uid"])}`); // 내가 푼
+  let question_desc = getQuestionByUid_us(poll["questions_uid"]); // 문항 - 강사님 풀이
+  // console.log(`${poll["questions_uid"]}. ${question_desc}`); // 문항 - 강사님 풀이
   let answer_uids = poll["answer_uids"];
   answer_uids.forEach((answer_uid, index) => {
     // answers
-    console.log(`(${index + 1}) ${answer_uid}`);
+    // console.log(`(${index + 1}) ${getAnswerByUid(answer_uid)}`);
   });
 }
 
-console.log();
+// Event handlers
+// Next 클릭 시 순서 있게 설문 표시
+// 대상 변수는 polls
+let index = 0;
+let queryNext = document.querySelector("#next");
+queryNext.addEventListener("click", setPollContent);
+
+function setPollContent() {
+  if (polls[index] == null) alert("마지막 페이지입니다.");
+  let queryContent = document.querySelector("#poll-contents");
+  // polls[0]["questions_uid"]; // 설문 문항
+  // polls[0]["answer_uids"]; // 설문 답항 묶음
+  // 1. 매장 상태가 좋은가요 ?
+  //  (1) 예
+  //  (2) 아니다.
+  // console.log(getQuestionByUid_us(polls[index]["questions_uid"]));
+  let desc = `<div>${index + 1}. ${getQuestionByUid_us(
+    polls[index]["questions_uid"]
+  )}</div>`;
+  polls[index]["answer_uids"].forEach((answer_uid, index) => {
+    // answers
+    // console.log(`(${index + 1}) ${getAnswerByUid(answer_uid)}`);
+    desc =
+      desc +
+      `<div><input type="radio" name="answer" id="answer_${index}" />
+        <label for="answer_${index}">(${index + 1}) ${getAnswerByUid(
+        answer_uid
+      )}</label></div>`;
+  });
+  queryContent.innerHTML = desc;
+  index++;
+}
+
+// Prev 클릭 시 이전 페이지로 돌아가기
+let queryPrev = document.querySelector("#prev");
+queryPrev.addEventListener("click", prevPollContent);
+
+function prevPollContent() {}
