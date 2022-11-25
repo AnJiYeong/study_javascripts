@@ -116,11 +116,6 @@ function getQuestionByUid(question_uid) {
       break;
     }
   }
-  //   questions_uid.forEach((question_uid, index) => {
-  //     if (question_uid[index] == questions_uid) {
-  //       question_desc = questions_list[index]["qustion"];
-  //     }
-  //   });
   return question_desc; // question
 }
 
