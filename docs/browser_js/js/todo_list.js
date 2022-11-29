@@ -8,7 +8,7 @@ button.addEventListener("click", (event) => {
 
 // Enter
 taskInput.addEventListener("keydown", (event) => {
-  if (event.code == "Enter") {
+  if (event.key == "Enter") {
     taskForm(event);
   }
 });
