@@ -9,6 +9,7 @@ button.addEventListener("click", (event) => {
 // Enter
 taskInput.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
+    // event.code는 한글 오류 발생됨
     taskForm(event);
   }
 });
