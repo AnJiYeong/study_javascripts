@@ -36,6 +36,7 @@ newTask_end = `</span>
                     </span>
             </li>`;
 
+// 입력값 있는 경우 실행되는 함수
 function addComment(event) {
   let queryComments = document.querySelector(".comments");
   let taskValue = taskInput.value;
