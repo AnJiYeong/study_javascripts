@@ -5,7 +5,6 @@ ul {
 
 .title {
   background-color: rgb(141, 21, 197);
-  width: 70%;
   height: 3.5rem;
   color: rgb(255, 221, 28);
   font-weight: 900;
@@ -16,10 +15,11 @@ ul {
 }
 
 .input {
-  width: 50%;
+  width: 70%;
   height: 3rem;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .cursor:hover {
@@ -27,7 +27,7 @@ ul {
 }
 
 .button {
-  width: 15%;
+  width: 25%;
   height: 2.5rem;
   background-color: rgb(63, 149, 184);
   border: 0;
@@ -40,10 +40,9 @@ ul {
   margin: 0.3rem 0rem 0.3rem 0rem;
 }
 
-.border {
+.task {
   border: 1px solid rgb(204, 204, 204);
   border-radius: 5px;
-  width: 70%;
   height: 4rem;
   padding: 0rem 1rem 0rem 0.3rem;
   margin-bottom: 0.3rem;
@@ -51,9 +50,18 @@ ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  font-size: 20px;
 }
 
 .flex-container {
   display: flex;
   flex-direction: column;
+}
+
+.color-yellow {
+  color: rgb(241, 205, 2);
+}
+
+.color-red {
+  color: red;
 }
