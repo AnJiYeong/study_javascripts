@@ -1,10 +1,12 @@
 let taskInput = document.querySelector("#taskId");
 
+// click
 let button = document.querySelector("#btnAdd");
 button.addEventListener("click", (event) => {
   taskForm(event);
 });
 
+// Enter
 taskInput.addEventListener("keydown", (event) => {
   if (event.code == "Enter") {
     taskForm(event);
@@ -14,12 +16,13 @@ taskInput.addEventListener("keydown", (event) => {
 function taskForm(event) {
   let taskValue = taskInput.value;
   if (taskValue == "") {
-    alert("Please enter a task");
+    alert("Please enter a task"); // 입력값 없는 경우 alert 발생
   } else {
     addComment(event);
   }
 }
 
+// 하트, 휴지통 아이콘 HTML
 newTask_start = '<li class="task"><span>';
 newTask_end = `</span>
                     <span class="flex-container">
@@ -39,7 +42,7 @@ function addComment(event) {
     "beforeend",
     newTask_start + taskValue + newTask_end
   );
-  taskInput.value = "";
+  taskInput.value = ""; // 입력 후 input창 초기화
   taskInput.focus();
 }
 
@@ -48,6 +51,7 @@ queryComments.addEventListener("click", (event) => {
   iconEvent(event);
 });
 
+// 아이콘 클릭 시 발생
 function iconEvent(event) {
   if (event.target.innerHTML == "favorite_border") {
     event.target.innerHTML = "favorite";
