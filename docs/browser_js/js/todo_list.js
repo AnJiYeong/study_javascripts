@@ -13,12 +13,13 @@ taskInput.addEventListener("keydown", (event) => {
   }
 });
 
+// 입력값 유무 비교
 function taskForm(event) {
   let taskValue = taskInput.value;
   if (taskValue == "") {
     alert("Please enter a task"); // 입력값 없는 경우 alert 발생
   } else {
-    addComment(event);
+    addComment(event); // 있는 경우 들어감
   }
 }
 
