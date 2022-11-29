@@ -45,6 +45,10 @@ function addComment(event) {
 
 let queryComments = document.querySelector(".comments");
 queryComments.addEventListener("click", (event) => {
+  iconEvent(event);
+});
+
+function iconEvent(event) {
   if (event.target.innerHTML == "favorite_border") {
     event.target.innerHTML = "favorite";
   } else if (event.target.innerHTML == "favorite") {
@@ -53,4 +57,4 @@ queryComments.addEventListener("click", (event) => {
   if (event.target.innerHTML == "delete") {
     event.target.parentElement.parentElement.parentElement.remove();
   }
-});
+}
