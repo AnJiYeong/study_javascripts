@@ -1,0 +1,67 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  background-color: rgb(141, 21, 197);
+  height: 3.5rem;
+  color: rgb(255, 221, 28);
+  font-weight: 900;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 70%;
+  height: 3rem;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.cursor:hover {
+  cursor: pointer;
+}
+
+.button {
+  width: 25%;
+  height: 2.5rem;
+  background-color: rgb(63, 149, 184);
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  font-size: 1rem;
+}
+
+.margin {
+  margin: 0.3rem 0rem 0.3rem 0rem;
+}
+
+.task {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 5px;
+  height: 4rem;
+  padding: 0rem 1rem 0rem 0.3rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-yellow {
+  color: rgb(241, 205, 2);
+}
+
+.color-red {
+  color: red;
+}
